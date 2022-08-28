@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.edu.dao.CourseMapper">
+
+    <select id="findCourseTypeTop8" resultType="com.offcn.edu.pojo.Course">
+        select *
+        from course
+        where courseType = #{typeId}
+          and status = 1 limit 0,8
+    </select>
+
+    <select id="searchCourseName" resultType="com.offcn.edu.pojo.Course">
+        select *
+        from course
+        where courseName like '%${keyword}%'
+    </select>
+    <select id="findCourseTypeAll" resultType="com.offcn.edu.pojo.Course">
+        select *
+        from course
+        where courseType = #{typeId}
+          and status = 1
+    </select>
+</mapper>

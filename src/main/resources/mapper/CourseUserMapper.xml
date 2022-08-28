@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.offcn.edu.dao.CourseUserMapper">
+
+    <select id="findEqualByCidUid" resultType="com.offcn.edu.pojo.CourseUser">
+        select *
+        from course_user
+        where cid = #{cid}
+          and uid = #{uid} limit 0,1
+    </select>
+
+    <select id="findCourseUserByUid" resultType="com.offcn.edu.pojo.CourseUser">
+        select *
+        from course_user
+        where uid = #{uid}
+    </select>
+</mapper>
